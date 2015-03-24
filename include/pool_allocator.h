@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Roots
+namespace Root
 {
 	// Templated class for allocating objects from a fixed size buffer.
 	// Objects that are allocated may have been used and are not reconstructed.

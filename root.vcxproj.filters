@@ -21,5 +21,8 @@
     <ClInclude Include="include\pool_allocator.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="include\array_builder.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

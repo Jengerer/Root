@@ -2,7 +2,7 @@
 
 #include <new>
 
-namespace Roots
+namespace Root
 {
 	// Class that manages heap memory.
 	class HeapAllocator

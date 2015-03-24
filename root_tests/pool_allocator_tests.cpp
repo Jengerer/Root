@@ -7,7 +7,7 @@ typedef int PoolType;
 
 TEST(PoolAllocatorTest, HandleSingleAllocation)
 {
-	Roots::PoolAllocator<PoolType, PoolSize> pool;
+	Root::PoolAllocator<PoolType, PoolSize> pool;
 	PoolType* object = pool.Allocate();
 	EXPECT_NE(object, nullptr);
 }
@@ -15,7 +15,7 @@ TEST(PoolAllocatorTest, HandleSingleAllocation)
 TEST(PoolAllocatorTest, HandlesRelease)
 {
 	// Just don't crash...
-	Roots::PoolAllocator<PoolType, PoolSize> pool;
+	Root::PoolAllocator<PoolType, PoolSize> pool;
 	PoolType* object = pool.Allocate();
 	ASSERT_NE(object, nullptr);
 	pool.Free(object);
@@ -23,7 +23,7 @@ TEST(PoolAllocatorTest, HandlesRelease)
 
 TEST(PoolAllocatorTest, HandlesFullAllocation)
 {
-	Roots::PoolAllocator<PoolType, PoolSize> pool;
+	Root::PoolAllocator<PoolType, PoolSize> pool;
 	for (int i = 0; i < PoolSize; ++i)
 	{
 		PoolType* object = pool.Allocate();
@@ -33,7 +33,7 @@ TEST(PoolAllocatorTest, HandlesFullAllocation)
 
 TEST(PoolAllocatorTest, HandlesOverflow)
 {
-	Roots::PoolAllocator<PoolType, PoolSize> pool;
+	Root::PoolAllocator<PoolType, PoolSize> pool;
 	PoolType* object;
 	for (int i = 0; i < PoolSize; ++i)
 	{
@@ -45,7 +45,7 @@ TEST(PoolAllocatorTest, HandlesOverflow)
 
 TEST(PoolAllocatorTest, AllowReallocate)
 {
-	Roots::PoolAllocator<PoolType, PoolSize> pool;
+	Root::PoolAllocator<PoolType, PoolSize> pool;
 	PoolType* objects[PoolSize];
 	
 	// Use full pool and release.
