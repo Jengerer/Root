@@ -69,9 +69,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="pool_allocator_tests.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="pool_allocator_tests.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
