@@ -11,9 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\array_builder.h" />
-    <ClInclude Include="include\heap_allocator.h" />
-    <ClInclude Include="include\pool_allocator.h" />
+    <ClCompile Include="source\memory.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\root\heap_allocator.h" />
+    <ClInclude Include="include\root\memory.h" />
+    <ClInclude Include="include\root\pool_allocator.h" />
+    <ClInclude Include="include\root\types.h" />
+    <ClInclude Include="include\root\utilities.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{32397F70-4878-4BB8-85C0-ED7E0F79A05B}</ProjectGuid>
