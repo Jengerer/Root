@@ -11,15 +11,13 @@ namespace Root
 		// Write in native integers.
 		size_t natives = size / sizeof(UNative);
 		UNative* bufferNatives = reinterpret_cast<UNative*>(buffer);
-		while (natives--)
-		{
+		while (natives--) {
 			*bufferNatives++ = 0;
 		}
 
 		// Write the rest in bytes.
 		U8* bufferRaw = reinterpret_cast<U8*>(bufferNatives);
-		while (bufferRaw != bufferEnd)
-		{
+		while (bufferRaw != bufferEnd) {
 			*bufferRaw++ = 0;
 		}
 	}
@@ -27,23 +25,21 @@ namespace Root
 	// Copy memory data from one location to another in bytes.
 	void Memory::Copy(const void* from, void *to, size_t size)
 	{
-		const U8 *fromEnd = reinterpret_cast<const U8*>(from) + size;
+		const U8* fromEnd = reinterpret_cast<const U8*>(from) + size;
 		U8* toEnd = reinterpret_cast<U8*>(to) + size;
 
 		// Write in native integers.
 		size_t natives = size / sizeof(UNative);
 		const UNative* fromNatives = reinterpret_cast<const UNative*>(from);
 		UNative* toNatives = reinterpret_cast<UNative*>(to);
-		while (natives--)
-		{
+		while (natives--) {
 			*toNatives++ = *fromNatives++;
 		}
 
 		// Write the rest in bytes.
 		const U8* fromRaw = reinterpret_cast<const U8*>(fromNatives);
 		U8* toRaw = reinterpret_cast<U8*>(toNatives);
-		while (fromRaw != fromEnd)
-		{
+		while (fromRaw != fromEnd) {
 			*toRaw++ = *fromRaw++;
 		}
 	}

@@ -14,6 +14,7 @@
     <ClCompile Include="source\memory.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\root\export.h" />
     <ClInclude Include="include\root\heap_allocator.h" />
     <ClInclude Include="include\root\memory.h" />
     <ClInclude Include="include\root\pool_allocator.h" />
@@ -51,12 +52,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>./include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <TargetName>$(ProjectName)_debug</TargetName>
+    <OutDir>$(SolutionDir)lib\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>RootLibraryExport;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

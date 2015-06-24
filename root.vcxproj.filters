@@ -35,5 +35,8 @@
     <ClInclude Include="include\root\utilities.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="include\root\export.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

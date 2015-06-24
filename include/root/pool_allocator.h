@@ -36,8 +36,7 @@ namespace Root
 	{
 		// Create linked list of next elements.
 		PoolElement** lastPointer = &head;
-		for (size_t i = 0; i < Size; ++i)
-		{
+		for (size_t i = 0; i < Size; ++i) {
 			PoolElement* current = &pool[i];
 			*lastPointer = current;
 			lastPointer = &current->next;
