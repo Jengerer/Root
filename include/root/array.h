@@ -19,45 +19,45 @@ namespace Root
 
         ~Array()
         {
-            allocator->Release(buffer);
+            allocator->Release(start);
         }
 
         // Non-const reference accessor to array element.
         Inline Type& operator[](Size index)
         {
-            DebugAssert(index < used);
+            DebugAssert(index < Getsize());
             return buffer[index];
         }
 
         // Const reference accessor to array element.
         Inline const Type& operator[](Size index) const
         {
-            DebugAssert(index < used);
-            return buffer[index];
+            DebugAssert(index < GetSize());
+            return start[index];
         }
 
         // Get mutable pointer to array memory buffer.
         Inline Type* GetBuffer()
         {
-            return buffer;
+            return start;
         }
 
         // Get immutable pointer to array memory buffer.
         Inline const Type* GetBuffer() const
         {
-            return buffer;
+            return start;
         }
 
         // Returns the actual size of the buffer (in number of objects).
         Inline Size GetAllocatedSize() const
         {
-            return allocated;
+            return (end - start);
         }
 
         // Returns the number of valid objects in the array.
         Inline Size GetSize() const
         {
-            return used;
+            return (last - start);
         }
 
         // Buffer resizing and management.
@@ -66,23 +66,10 @@ namespace Root
         }
         
     private:
-        Type* buffer;
-        Size allocated;
-        Size used;
+        Type* start; // Pointer to first valid array element.
+		Type* last; // Pointer to address one element after last valid array element.
+		Type* end; // Pointer to address one element after last allocated array element.
         Allocator* allocator;
     };
 
-    template<typename Type, class Allocator>
-    Array<Type, Allocator>::Array(): Array(Allocator::GetDefaultInstance())
-    {
-    }
-
-    template<typename Type, class Allocator>
-    Array<Type, Allocator>::Array(Allocator* allocator):
-    buffer(nullptr),
-    allocated(0),
-    used(0),
-    allocator(allocator)
-    {
-    }
 }
