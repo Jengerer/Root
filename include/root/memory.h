@@ -27,6 +27,10 @@ namespace Root
 		{
 			return length;
 		}
+
+	private:
+		Memory() = delete;
+		~Memory() = delete;
 	};
 
 }

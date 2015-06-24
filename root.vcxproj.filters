@@ -18,6 +18,9 @@
     <ClCompile Include="source\memory.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="source\math.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\root\heap_allocator.h">
@@ -36,6 +39,12 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\root\export.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\root\array.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\root\math.h">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>

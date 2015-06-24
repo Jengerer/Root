@@ -11,11 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\math.cpp" />
     <ClCompile Include="source\memory.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\root\array.h" />
     <ClInclude Include="include\root\export.h" />
     <ClInclude Include="include\root\heap_allocator.h" />
+    <ClInclude Include="include\root\math.h" />
     <ClInclude Include="include\root\memory.h" />
     <ClInclude Include="include\root\pool_allocator.h" />
     <ClInclude Include="include\root\types.h" />
