@@ -4,7 +4,6 @@
 
 namespace Root
 {
-
     // Class for managing a contiguous array of objects.
     template<typename Type, class Allocator = HeapAllocator>
     class Array

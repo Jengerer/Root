@@ -26,7 +26,6 @@ namespace Root
 	void Memory::Copy(const void* from, void *to, size_t size)
 	{
 		const U8* fromEnd = reinterpret_cast<const U8*>(from) + size;
-		U8* toEnd = reinterpret_cast<U8*>(to) + size;
 
 		// Write in native integers.
 		size_t natives = size / sizeof(UNative);

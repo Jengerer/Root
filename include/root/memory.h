@@ -6,7 +6,6 @@
 
 namespace Root
 {
-
 	// Class containing memory manipulating utilities.
 	class Memory
 	{
@@ -32,5 +31,4 @@ namespace Root
 		Memory() = delete;
 		~Memory() = delete;
 	};
-
 }

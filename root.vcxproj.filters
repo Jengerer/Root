@@ -21,6 +21,9 @@
     <ClCompile Include="source\math.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="source\heap_allocator.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\root\heap_allocator.h">
@@ -45,6 +48,9 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\root\math.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\root\ring_allocator.h">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>

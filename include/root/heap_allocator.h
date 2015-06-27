@@ -1,6 +1,10 @@
 #pragma once
 
+#include "root/export.h"
+#include "root/types.h"
+#include "root/utilities.h"
 #include <new>
+#include <utility>
 
 namespace Root
 {
@@ -11,55 +15,42 @@ namespace Root
 		HeapAllocator() = default;
 		~HeapAllocator() = default;
 
-		// Allocate (without constructing) memory for an object type.
+		// Allocate memory for an object type.
 		// Returns nullptr on failure.
-		template<class Type>
-		Type* Allocate();
+		template<class Type, class... Parameters>
+		Inline Type* Allocate(Parameters&&... parameters)
+		{
+			Type* object = new (std::nothrow) Type(std::forward<Parameters>(parameters)...);
+			return object;
+		}
 
 		// Allocate an array of objects for a type.
 		// Returns nullptr on failure.
 		// Objects are constructed with default constructor.
 		template<class Type>
-		Type* AllocateArray(size_t count);
+		Inline Type* AllocateArray(Size count)
+		{
+			Type* objects = new (std::nothrow) Type[count];
+			return objects;
+		}
 
 		// Free a single allocated object.
 		// Object can be nullptr. If it isn't, it must have been constructed.
 		template<class Type>
-		void Free(Type* object);
+		Inline void Free(Type* object)
+		{
+			delete object;
+		}
 
 		// Free an allocated array of objects.
 		// Array can be nullptr.
 		template<class Type>
-		void FreeArray(Type* objects);
+		Inline void FreeArray(Type* objects)
+		{
+			delete[] objects;
+		}
 
 	public:
-		static HeapAllocator instance;
+		static RootLibrary HeapAllocator instance;
 	};
-
-	template<class Type>
-	Type* Allocate()
-	{
-		size_t size = sizeof(Type);
-		unsigned char* buffer = new (std::nothrow) unsigned char[size];
-		return reinterpret_cast<Type*>(buffer);
-	}
-
-	template<class Type>
-	Type* AllocateArray(size_t count)
-	{
-		Type* objects = new (std::nothrow) Type[count];
-		return objects;
-	}
-
-	template<class Type>
-	void Free(Type* object)
-	{
-		delete object;
-	}
-
-	template<class Type>
-	void FreeArray(Type* objects)
-	{
-		delete[] objects;
-	}	
 }

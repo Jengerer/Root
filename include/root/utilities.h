@@ -1,5 +1,6 @@
 #pragma once
 
+#include "root/types.h"
 #include <cassert>
 
 // Function declaration keywords.
@@ -17,3 +18,6 @@
 #else
 #define DebugAssert(x)
 #endif
+
+// Macro for unreferenced variables.
+#define Unreferenced(...)

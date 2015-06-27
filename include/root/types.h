@@ -26,6 +26,10 @@ namespace Root
 	// Type for storing size content.
 	using Size = size_t;
 
+	// Types for storing integral pointer values.
+	using IPointer = intptr_t;
+	using UPointer = uintptr_t;
+
 	// Real value types.
 	using Real = float;
 }

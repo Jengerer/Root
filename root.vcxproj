@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\heap_allocator.cpp" />
     <ClCompile Include="source\math.cpp" />
     <ClCompile Include="source\memory.cpp" />
   </ItemGroup>
@@ -21,6 +22,7 @@
     <ClInclude Include="include\root\math.h" />
     <ClInclude Include="include\root\memory.h" />
     <ClInclude Include="include\root\pool_allocator.h" />
+    <ClInclude Include="include\root\ring_allocator.h" />
     <ClInclude Include="include\root\types.h" />
     <ClInclude Include="include\root\utilities.h" />
   </ItemGroup>
@@ -60,10 +62,11 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>RootLibraryExport;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

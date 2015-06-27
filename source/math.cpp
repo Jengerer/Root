@@ -1,5 +1,5 @@
 #include "root/math.h"
-#include <math.h>
+#include <cmath>
 
 namespace Root
 {
